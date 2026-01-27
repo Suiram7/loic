@@ -39,7 +39,7 @@ html_code = """
                     },
                     {
                         name: "Nutrition & Hygiène",
-                        items: [{ id: "sleep", label: "Sommeil 'Banking'", time: "J-14", details: "Vise +45 à +90 min/nuit. La régularité > Quantité." }]
+                        items: [{ id: "sleep", label: "Sommeil 'Banking'", time: "J-14", details: "Vise +45 à +90 min/nuit.\\nLa régularité > Quantité." }]
                     }
                 ]
             },
@@ -52,9 +52,91 @@ html_code = """
                     {
                         name: "Nutrition & Hydratation",
                         items: [
-                            { id: "beet", label: "Jus de Betterave", time: "J-6", details: "70-140 ml/jour. Améliore l'économie d'effort. Éviter bains de bouche." },
+                            { id: "beet", label: "Jus de Betterave", time: "J-6", details: "70-140 ml/jour.\\nAméliore l'économie d'effort.\\nÉviter bains de bouche." },
                             { id: "sodium", label: "Hyperhydratation sodée", time: "J-3", details: "Eau riche en sodium ou électrolytes." },
-                            { id: "residues", label: "Régime sans résidus", time: "J-2", details: "Élimine les fibres pour vider le tractus intestinal (gain 500g-1kg)." },
+                                                        { id: "residues", label: "Régime sans résidus", time: "J-2", details: `
+<div class="space-y-4">
+    <p>
+        Élimine les fibres (légumes crus, grains entiers) pour vider le tractus intestinal. Cela évite les troubles digestifs et peut te faire gagner 500g à 1kg sur la balance ("poids mort" intestinal).
+    </p>
+    <div class="rounded-lg border border-slate-200 overflow-hidden">
+        <table class="w-full text-[10px] text-left border-collapse">
+            <thead>
+                <tr class="bg-red-50 text-red-800 border-b border-red-100">
+                    <th class="p-2 font-bold w-1/3">Catégorie (Stop)</th>
+                    <th class="p-2 font-bold">Exemples</th>
+                    <th class="p-2 font-bold">Pourquoi stopper</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Fibres insolubles</td>
+                    <td class="p-2 text-slate-600">Légumes crus (brocoli, chou), graines, pain complet</td>
+                    <td class="p-2 text-slate-500">↑ volume, ↑ fermentation → ballonnements</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Légumineuses</td>
+                    <td class="p-2 text-slate-600">Lentilles, pois chiches, haricots</td>
+                    <td class="p-2 text-slate-500">↑ gaz + digestion lente</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Céréales complètes</td>
+                    <td class="p-2 text-slate-600">Riz complet, quinoa, avoine complet</td>
+                    <td class="p-2 text-slate-500">↑ fibre insoluble → contenu intestinal élevé</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Fruits riches en fibres</td>
+                    <td class="p-2 text-slate-600">Framboises, poires, pommes avec peau</td>
+                    <td class="p-2 text-slate-500">↑ fibre insoluble, fermentation</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Noix / fruits secs</td>
+                    <td class="p-2 text-slate-600">Amandes, noix, pruneaux</td>
+                    <td class="p-2 text-slate-500">Gras ralentit vidange, difficile à digérer</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Boissons gazeuses</td>
+                    <td class="p-2 text-slate-600">Soda, eau gazeuse</td>
+                    <td class="p-2 text-slate-500">Ballonnements, CO₂</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="rounded-lg border border-slate-200 overflow-hidden">
+        <table class="w-full text-[10px] text-left border-collapse">
+            <thead>
+                <tr class="bg-green-50 text-green-800 border-b border-green-100">
+                    <th class="p-2 font-bold w-1/3">Objectif (Go)</th>
+                    <th class="p-2 font-bold">Aliments recommandés</th>
+                    <th class="p-2 font-bold">Notes pratiques</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Glucides digestibles</td>
+                    <td class="p-2 text-slate-600">Riz blanc, pâtes blanches, pomme de terre, banane mûre</td>
+                    <td class="p-2 text-slate-500">Maintient glycogène → énergie intacte</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Protéines faciles</td>
+                    <td class="p-2 text-slate-600">Blanc de poulet, dinde, œufs, whey</td>
+                    <td class="p-2 text-slate-500">Pas de fibre → digestion rapide</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Lipides</td>
+                    <td class="p-2 text-slate-600">Très modérés (huile d'olive crue)</td>
+                    <td class="p-2 text-slate-500">Légers pour le repas, pas de friture</td>
+                </tr>
+                <tr class="border-b border-slate-100">
+                    <td class="p-2 font-bold text-slate-700">Liquides & sodium</td>
+                    <td class="p-2 text-slate-600">Eau plate, Vichy plate, bouillon</td>
+                    <td class="p-2 text-slate-500">Maintien hydratation et sodium</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+` },
                             { id: "carbs", label: "Charge Glucidique", time: "J-1", details: "Cible : 4-5g de glucides / kg de PDC." }
                         ]
                     },
@@ -62,7 +144,7 @@ html_code = """
                         name: "Suppléments",
                         items: [
                             { id: "caf_reset", label: "Arrêt de la Caféine", time: "J-7", details: "Se sevrer pour resensibiliser les récepteurs." },
-                            { id: "gear", label: "Check-up Matériel", time: "J-1", details: "Chaussures, straps, nutrition. Rien de nouveau le jour J." }
+                            { id: "gear", label: "Check-up Matériel", time: "J-1", details: "Chaussures, straps, nutrition.\\nRien de nouveau le jour J." }
                         ]
                     }
                 ]
@@ -77,13 +159,13 @@ html_code = """
                         name: "Nutrition",
                         items: [
                             { id: "pre_meal", label: "Repas Pré-compé", time: "H-4", details: "Glucides ++, pauvre en lipides/fibres (ex: riz blanc, compote)." },
-                            { id: "caf_final", label: "Caféine Elite", time: "H-1", details: "3 mg / kg de poids de corps. Réduit le RPE." }
+                            { id: "caf_final", label: "Caféine Elite", time: "H-1", details: "3 mg / kg de poids de corps.\\nRéduit le RPE." }
                         ]
                     },
                     {
                         name: "Warm-up",
                         items: [
-                            { id: "pap", label: "PAP Musculaire", time: "H-15m", details: "Contractions max très brèves. Intensité max, volume bas." },
+                            { id: "pap", label: "PAP Musculaire", time: "H-15m", details: "Contractions max très brèves.\\nIntensité max, volume bas." },
                             { id: "vest", label: "Veste thermique", time: "Dép.", details: "Garder le corps au chaud jusqu'au signal." }
                         ]
                     }
@@ -98,7 +180,7 @@ html_code = """
                     {
                         name: "Protocole",
                         items: [
-                            { id: "recov", label: "Récup Active", time: "H+2m", details: "Marche active. Ne t'assois pas. Respire par le nez." },
+                            { id: "recov", label: "Récup Active", time: "H+2m", details: "Marche active.\\nNe t'assois pas.\\nRespire par le nez." },
                             { id: "rinse", label: "Relance (Rinçage)", time: "H-5m", details: "Rinçage de bouche sucré (recracher) pour stimuler le cerveau." }
                         ]
                     }
@@ -180,8 +262,8 @@ html_code = """
                                 className: `p-2 rounded-lg ${openDetails[item.id] ? 'bg-red-600 text-white' : 'bg-slate-50 text-slate-300'}`
                             }, 'i')
                         ),
-                        openDetails[item.id] && React.createElement('div', { className: 'mt-1 p-4 bg-white/50 rounded-2xl text-[11px] text-slate-600 leading-relaxed italic border border-white' },
-                            item.details
+                        openDetails[item.id] && React.createElement('div', { className: 'mt-1 p-4 bg-white/50 rounded-2xl text-[11px] text-slate-600 leading-relaxed border border-white' },
+                            React.createElement('span', { style: { display: 'block', width: '100%' }, dangerouslySetInnerHTML: { __html: item.details } })
                         )
                     ))
                 )),
@@ -204,6 +286,23 @@ html_code = """
 </html>
 """
 
-components.html(html_code, height=900, scrolling=True)
-
-st.caption("Next Athlete Performance System v1.0 • Running on Streamlit Engine")
+components.html(html_code + '''
+<style>
+    .footer-caption-custom {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        text-align: center;
+        font-weight: bold;
+        color: #dc2626;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        background: transparent;
+        z-index: 9999;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="footer-caption-custom">Next Athlete Performance System</div>
+''', height=900, scrolling=True)
